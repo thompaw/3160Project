@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS Casino;
+CREATE DATABASE Casino;
+USE Casino; 
