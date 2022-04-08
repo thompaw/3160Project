@@ -39,7 +39,7 @@ CREATE TABLE Losses (
 
 CREATE TABLE Game (
     Game_id int NOT NULL AUTO_INCREMENT, 
-    Number_of_player int NOT NULL, 
+    Number_of_players int NOT NULL, 
     [table] varchar(2) NOT NULL, 
     [description] varchar(255), 
     PRIMARY KEY (Game_id)
