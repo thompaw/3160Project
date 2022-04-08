@@ -1,3 +1,4 @@
+
 USE Casino; 
 
 INSERT INTO Patron(Winnings, Losses, Net_Profit, Patron_type, Games_Played, Perks)
@@ -23,3 +24,8 @@ VALUES
 (2, 200, 'AB', 'Poker', 2), 
 (3, 12, 'AA', 'Blackjack', 1), 
 (1, 1000, 'AC', 'GoFish', 3);
+
+SELECT * from Patron;
+SELECT * from Game;
+SELECT * from Winnings;
+SELECT * from Losses;
