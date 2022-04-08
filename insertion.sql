@@ -1,4 +1,4 @@
-USE Project; 
+USE Casino; 
 
 INSERT INTO Patron(Winnings, Losses, Net_Profit, Patron_type, Games_Played, Perks)
 VALUES
