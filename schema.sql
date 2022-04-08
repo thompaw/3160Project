@@ -14,8 +14,8 @@ CREATE TABLE Patron (
 );
 
 CREATE TABLE Winnings (
-    Patron_id int NOT NULL, 
     transaction_id int NOT NULL AUTO_INCREMENT, 
+    Patron_id int NOT NULL, 
     amount_won int NOT NULL, 
     [table] varchar(2) NOT NULL, 
     game varchar(15) NOT NULL, 
@@ -26,8 +26,8 @@ CREATE TABLE Winnings (
 );
 
 CREATE TABLE Losses (
-    Patron_id int NOT NULL, 
     transaction_id int NOT NULL AUTO_INCREMENT, 
+    Patron_id int NOT NULL, 
     amount_lost int NOT NULL, 
     [table] varchar(2) NOT NULL, 
     game varchar(15) NOT NULL, 
