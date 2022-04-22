@@ -55,6 +55,27 @@ FOREIGN KEY (Table_location) REFERENCES tabled(table_location)
 
 
 
+CREATE VIEW Premium_Patron AS
+SELECT Patron_id, Net_profit, Games_played, Table_location, amount_won, amount_lost, perks
+FROM Patron, Winnings, Losses
+WHERE patron_type = 'Premium';
+
+CREATE VIEW Everday_Patron AS
+SELECT Patron_id, Net_profit, Games_played, Table_location, amount_won, amount_lost, perks
+FROM Patron, Winnings, Losses
+WHERE patron_type = 'Everyday';
+
+CREATE PROCEDURE Total_Balance() @amount_wonnvarchar(30), @amount_lost nvarchar(10)
+AS SELECT * FROM Winnings, Losses
+GO;
+
+CREATE PROCEDURE add_balance() @amount_won nvarchar(30), @net_profit nvarchar(10)
+AS SELECT * FROM Winnings,Patron
+GO;
+
+CREATE PROCEDURE subtract_balance() @amount_lost nvarchar(30), @net_profit nvarchar(10)
+AS SELECT * FROM Losses,Patron
+GO;
 INSERT INTO Patron(Patron_id, Net_profit, patron_type, Games_played, perks) 
 VALUES
 (1, 100, 'Everyday', 123, 'N/A'),
@@ -92,3 +113,4 @@ SELECT * from Employee;
 SELECT * from Winnings;
 SELECT * from Losses;
 SELECT * from tabled;
+
