@@ -1,29 +1,35 @@
 
 USE Casino; 
 
-INSERT INTO Patron(Winnings, Losses, Net_Profit, Patron_type, Games_Played, Perks)
+INSERT INTO Patron(Net_Profit, Patron_type, Games_Played, Perks)
 VALUES
-(100, 1000, -900, "regular", 1, NULL), 
-(4000, 200, 3800, "premium", 35, "Free Bathrooms"), 
-(12038, 12, 12026, "regular", 103, NULL);
+(-900, "regular", 1, NULL), 
+(3800, "premium", 35, "Free Bathrooms"), 
+(12026, "regular", 103, NULL);
 
 INSERT INTO Game(Number_of_players, table_location, game_desc)
 VALUES
-(14, 'AA', 'Blackjack'), 
-(5, 'AB', 'Poker'), 
-(15, 'AC', 'GoFish');
+(14, 'Blackjack'), 
+(5, 'Poker'), 
+(15, 'GoFish');
 
-INSERT INTO Winnings(Patron_id, amount_won, table_location, game, game_id)
+INSERT INTO Winnings(Patron_id, amount_won, table_location)
 VALUES
-(1, 100, 'AC', 'GoFish', 3), 
-(2, 4000, 'AA', 'Blackjack', 1), 
-(3, 12038, 'AB', 'Poker', 2);
+(1, 100, 'AC'), 
+(2, 4000, 'AA'), 
+(3, 12038, 'AB');
 
-INSERT INTO Losses(Patron_id, amount_lost, table_location, game, game_id)
+INSERT INTO Losses(Patron_id, amount_lost, table_location)
 VALUES
-(2, 200, 'AB', 'Poker', 2), 
-(3, 12, 'AA', 'Blackjack', 1), 
-(1, 1000, 'AC', 'GoFish', 3);
+(2, 200, 'AB'), 
+(3, 12, 'AA'), 
+(1, 1000, 'AC');
+
+INSERT INTO Table_(Table_location, Game_id)
+VALUES
+('AB', 14), 
+('AA', 5), 
+('AC', 15);
 
 SELECT * from Patron;
 SELECT * from Game;
